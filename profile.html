@@ -27,17 +27,18 @@
             <nav class="hidden md:flex space-x-6 font-medium">
                 <a href="index.html" class="hover:text-yellow-300 transition">होम</a>
                 <a href="profile.html" class="text-yellow-300 font-bold transition">प्रोफाइल व सदस्य</a>
+                <a href="services.html" class="hover:text-yellow-300 transition">सरकारी सेवाएं</a>
             </nav>
         </div>
     </header>
 
     <!-- Profile Section -->
-    <section class="py-16 bg-white">
+    <section class="py-12 bg-white">
         <div class="container mx-auto px-4 max-w-4xl">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-8">संगठन प्रोफाइल</h2>
-            <div class="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-lg shadow-md">
-                <h3 class="text-xl font-bold text-blue-900 mb-3">परिचय एवं उद्देश्य</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-6">संगठन प्रोफाइल</h2>
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg shadow-md">
+                <h3 class="text-xl font-bold text-blue-900 mb-2">परिचय एवं उद्देश्य</h3>
+                <p class="text-gray-700 leading-relaxed mb-3">
                     <strong>युवा शक्ति संगठन</strong> (ग्राम पंचायत तलवार) एक सामाजिक मंच है जिसका मुख्य उद्देश्य युवाओं को एकजुट करना, सामाजिक जागरूकता फैलाना और सरकार द्वारा चलाई जाने वाली जनकल्याणकारी योजनाओं का लाभ हर नागरिक तक पहुँचाना है।
                 </p>
                 <p class="text-gray-700 leading-relaxed">
@@ -47,31 +48,54 @@
         </div>
     </section>
 
+    <!-- Add Member Form Section -->
+    <section class="py-8 bg-blue-50">
+        <div class="container mx-auto px-4 max-w-xl bg-white p-6 rounded-lg shadow-md border border-blue-100">
+            <h3 class="text-xl font-bold text-blue-900 mb-4 text-center">नया सदस्य जोड़ें</h3>
+            <form id="addMemberForm" onsubmit="addNewMember(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">सदस्य का नाम</label>
+                    <input type="text" id="memberName" required placeholder="अपना पूरा नाम लिखें" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">पद / भूमिका (Role)</label>
+                    <input type="text" id="memberRole" required placeholder="जैसे: सक्रिय सदस्य, युवा कार्यकर्ता" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-2 rounded-lg hover:bg-blue-800 transition">सूची में जोड़ें</button>
+            </form>
+        </div>
+    </section>
+
     <!-- Live Members Section -->
-    <section class="py-16 bg-gray-100">
+    <section class="py-12 bg-gray-100">
         <div class="container mx-auto px-4 max-w-5xl">
             <h2 class="text-3xl font-bold text-center text-blue-900 mb-2">लाइव सदस्य सूची</h2>
-            <p class="text-center text-gray-600 mb-10">संगठन से जुड़े सक्रिय और समर्पित सदस्य</p>
+            <p class="text-center text-gray-600 mb-8">संगठन से जुड़े सक्रिय और समर्पित सदस्य</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Member 1 -->
+            <!-- Members Grid -->
+            <div id="membersGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Default Static Members -->
                 <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center">
                     <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">DS</div>
                     <h3 class="font-bold text-lg text-gray-800">दलवीर सिंह</h3>
                     <p class="text-sm text-blue-600 font-medium">संस्थापक / अध्यक्ष</p>
                     <span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">सक्रिय (Active)</span>
                 </div>
-                <!-- Member 2 -->
                 <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">SK</div>
-                    <h3 class="font-bold text-lg text-gray-800">सुमित कुमार</h3>
+                    <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">Ak</div>
+                    <h3 class="font-bold text-lg text-gray-800">Akash</h3>
                     <p class="text-sm text-blue-600 font-medium">सचिव</p>
                     <span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">सक्रिय (Active)</span>
                 </div>
-                <!-- Member 3 -->
                 <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">AK</div>
-                    <h3 class="font-bold text-lg text-gray-800">अंकित कुमार</h3>
+                    <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">PP</div>
+                    <h3 class="font-bold text-lg text-gray-800">Puspendra</h3>
+                    <p class="text-sm text-blue-600 font-medium">कोषाध्यक्ष</p>
+                    <span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">सक्रिय (Active)</span>
+                </div>
+<div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">Dh</div>
+                    <h3 class="font-bold text-lg text-gray-800">dharmendra</h3>
                     <p class="text-sm text-blue-600 font-medium">कोषाध्यक्ष</p>
                     <span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">सक्रिय (Active)</span>
                 </div>
@@ -84,5 +108,42 @@
         <p class="text-sm">&copy; 2026 युवा शक्ति संगठन - ग्राम पंचायत तलवार। सर्वाधिकार सुरक्षित।</p>
     </footer>
 
+    <!-- JavaScript for Dynamic Members -->
+    <script>
+        function loadStoredMembers() {
+            const membersGrid = document.getElementById('membersGrid');
+            const savedMembers = JSON.parse(localStorage.getItem('yss_dynamic_members')) || [];
+            
+            savedMembers.forEach(member => {
+                const initials = member.name.split(' ').map(n => n[0]).join('').toUpperCase();
+                const memberCard = document.createElement('div');
+                memberCard.className = "bg-white p-6 rounded-lg shadow-md border-t-4 border-blue-600 text-center";
+                memberCard.innerHTML = `
+                    <div class="w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">${initials || 'US'}</div>
+                    <h3 class="font-bold text-lg text-gray-800">${member.name}</h3>
+                    <p class="text-sm text-blue-600 font-medium">${member.role}</p>
+                    <span class="inline-block mt-3 px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">सक्रिय (Active)</span>
+                `;
+                membersGrid.appendChild(memberCard);
+            });
+        }
+
+        function addNewMember(event) {
+            event.preventDefault();
+            const name = document.getElementById('memberName').value;
+            const role = document.getElementById('memberRole').value;
+
+            const newMember = { name, role };
+            const savedMembers = JSON.parse(localStorage.getItem('yss_dynamic_members')) || [];
+            savedMembers.push(newMember);
+            localStorage.setItem('yss_dynamic_members', JSON.stringify(savedMembers));
+
+            alert('सदस्य सफलतापूर्वक जोड़ दिया गया है!');
+            document.getElementById('addMemberForm').reset();
+            location.reload(); // Page refresh to show new member
+        }
+
+        window.onload = loadStoredMembers;
+    </script>
 </body>
-</html>
+</html>1
